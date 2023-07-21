@@ -13,7 +13,7 @@ const ContactList = ({ filterValue, contacts, deleteChenge }) => {
         return (
          <ul className={css.list}>
                 {contacts.map(contact => {
-                  const tel=`tel: ${contact.number}`
+                  const tel=`tel:${contact.number}`
             return (
                 <li className={css.item} key={contact.id}>
                  <span className={css.name}>{contact.name}:</span> 
