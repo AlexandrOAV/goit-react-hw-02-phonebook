@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css'
+
 const ContactList = ({ filterValue, contacts, deleteChenge }) => {
  
     const filterContacs = contacts.filter(contact =>
@@ -19,13 +20,13 @@ const ContactList = ({ filterValue, contacts, deleteChenge }) => {
                  <span className={css.name}>{contact.name}:</span> 
                   <a href={tel} className={css.number}>{contact.number}</a> 
                     <button type="button" onClick={()=>deleteChenge(contact.id)}>Delete</button>
-                </li>
-                
-)
+              </li>
+            )
           })}
         </ul>
     )
 }
+
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({

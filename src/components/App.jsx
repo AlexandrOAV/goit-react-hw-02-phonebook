@@ -15,6 +15,7 @@ export class App extends Component {
     const { contacts } = this.state;
     return contacts.find(contact=>contact.name.toUpperCase()===nameUser.toUpperCase())
   }
+  
   submitForm = stateContactForm => {
     stateContactForm.id = nanoid(7);
     const { name } = stateContactForm;
@@ -26,18 +27,17 @@ export class App extends Component {
       {
         contacts: [...prevState.contacts, stateContactForm],
       }))
-    }
+  }
+  
   filterForm = (event) => {
-    
     this.setState({ filter: event.target.value })
-
   };
+
   deleteChenge = (id) => {
     this.setState(prevState=>({contacts:prevState.contacts.filter(contact=>contact.id!==id)}))
    }
    
   render() {
-    // console.log( this.state.filter)
     return (
     <div className={css.container}>
         <h1 className={css.title}> Phonebook</h1>
