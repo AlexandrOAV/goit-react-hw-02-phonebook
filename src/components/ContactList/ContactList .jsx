@@ -1,17 +1,9 @@
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css'
 
-const ContactList = ({ filterValue, contacts, deleteChenge }) => {
+const ContactList = ({ contacts, deleteChenge }) => {
  
-    const filterContacs = contacts.filter(contact =>
-        (contact.name.toUpperCase().includes(filterValue.toUpperCase())));
-    if (filterContacs.length!==0) {
-       contacts=[...filterContacs]
-    } else {
-        return
-    }
-    
-        return (
+  return (contacts.length>0&&
          <ul className={css.list}>
                 {contacts.map(contact => {
                   const tel=`tel:${contact.number}`
